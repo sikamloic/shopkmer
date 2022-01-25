@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-profil',
@@ -7,7 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilComponent implements OnInit {
 
-  constructor() { }
+  updateRegister : FormGroup
+  constructor(
+    private formbuilder : FormBuilder
+  ) {
+    this.updateRegister = this.formbuilder.group({
+      email: formbuilder.control(''),
+      postal: formbuilder.control(''),
+      ville: formbuilder.control(''),
+      adresse: formbuilder.control(''),
+      nom: formbuilder.control(''),
+      prenom: formbuilder.control(''),
+      biographie: formbuilder.control(''),
+      tel: formbuilder.control('')
+    })
+  }
 
   ngOnInit(): void {
   }

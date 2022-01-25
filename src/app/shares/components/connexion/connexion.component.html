@@ -9,6 +9,7 @@
             <form action="" [formGroup]="loginGroup" (ngSubmit)="signIn()">
                 <div class="space-y-5">
                     <div class="">
+                        <mat-error class="text-red-900">{{message}}</mat-error>
                         <mat-form-field appearance="outline" class="w-full cursor-pointer" color="primary">
                             <mat-icon matPrefix class="mat-18 mr-2"><img src="assets/email.svg" alt="" class=""></mat-icon>
                             <mat-label>*Email</mat-label>
@@ -37,7 +38,7 @@
                     <div class="">
                         <button class="text-white w-full h-10 rounded-lg uppercase" style="background-color: #2D88FF;">facebook</button>
                     </div>
-                    <div class="text-sm flex space-x-2 text-center">
+                    <div class="text-sm flex space-x-2 text-center" routerLink="/inscription">
                         <div class="text-center">Vous n'avez pas un compte ?</div>
                         <a class="text-pink-500 text-center">S'inscrire</a>
                     </div>

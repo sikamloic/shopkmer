@@ -12,7 +12,7 @@ import { UserService } from 'src/app/shares/services/user.service';
 export class AcceuilComponent implements OnInit {
 
   registerForm : FormGroup;
-  message : any;
+  message : string | undefined;
   constructor(
     private formBuilder : FormBuilder,
     private localStorage : LocalStorageService,
@@ -35,6 +35,8 @@ export class AcceuilComponent implements OnInit {
       this.registerForm.value.pwd,
     ).subscribe((res : any)=>{
       console.log(res)
+      this.localStorage.set("x-access-token", res.accessToken);
+      this.localStorage.set("prenom", res.prenom)
       this.route.navigate(['/coiffeuse/dashboard'])
     })
   }
@@ -50,10 +52,11 @@ export class AcceuilComponent implements OnInit {
       this.registerForm.value.pwd,
     ).subscribe((res:any) =>{
       console.log(res);
-      // this.signIn()
+      this.signIn()
     },
-    (err : any) =>{
-      this.message = err.message
+    (err: any) => {
+      console.log(err);
+      this.message = err.error.message;
     }
     )
   }

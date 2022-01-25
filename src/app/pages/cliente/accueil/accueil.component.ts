@@ -2,6 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { MatTab, MatTabChangeEvent, MatTabLabel } from '@angular/material/tabs';
 import { HeaderComponent } from 'src/app/shares/components/header/header.component';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { MatDialog } from '@angular/material/dialog';
+import { GetPrestationComponent } from 'src/app/shares/modals/get-prestation/get-prestation.component';
+import { GetVilleComponent } from 'src/app/shares/modals/get-ville/get-ville.component';
 
 @Component({
   selector: 'app-accueil',
@@ -10,7 +13,25 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class AccueilComponent implements OnInit {
 
-  constructor() {}
+  prestation: string ='';
+  ville: string =''
+  constructor(
+    private modalCtrl : MatDialog
+  ) {}
+
+  openPrestation(){
+    const modal = this.modalCtrl.open(GetPrestationComponent)
+    modal.afterClosed().subscribe((res:any)=>{
+      this.prestation = res
+    })
+  }
+
+  openVille(){
+    const modal = this.modalCtrl.open(GetVilleComponent)
+    modal.afterClosed().subscribe((res)=>{
+      this.ville = res
+    })
+  }
 
   customOptions: OwlOptions = {
     loop: true,

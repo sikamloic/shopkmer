@@ -50,3 +50,8 @@ $bigoodee-theme: mat.define-light-theme(
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.btn:hover{
+  transform: scale(1.1);
+  color: #ff3e79 !important;
+}

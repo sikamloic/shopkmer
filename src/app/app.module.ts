@@ -19,6 +19,14 @@ import { GalerieComponent } from './pages/coiffeuse/dashboard/galerie/galerie.co
 import { PrestationComponent } from './pages/coiffeuse/dashboard/prestation/prestation.component';
 import { ProfilComponent } from './pages/coiffeuse/dashboard/profil/profil.component';
 import { MessagerieComponent } from './pages/coiffeuse/dashboard/messagerie/messagerie.component';
+import { DashboardCoiffeuseComponent } from './shares/components/dashboard-coiffeuse/dashboard-coiffeuse.component';
+import { DashboardClienteComponent } from './shares/components/dashboard-cliente/dashboard-cliente.component';
+import { DeletePictureComponent } from './shares/modals/delete-picture/delete-picture.component';
+import { DeconnectionComponent } from './pages/coiffeuse/dashboard/deconnection/deconnection.component';
+import { GetPrestationComponent } from './shares/modals/get-prestation/get-prestation.component';
+import { AddPrestationComponent } from './shares/modals/add-prestation/add-prestation.component';
+import { GetVilleComponent } from './shares/modals/get-ville/get-ville.component';
+import { GetPlanningComponent } from './shares/modals/get-planning/get-planning.component';
 
 
 @NgModule({
@@ -33,7 +41,15 @@ import { MessagerieComponent } from './pages/coiffeuse/dashboard/messagerie/mess
     GalerieComponent,
     PrestationComponent,
     ProfilComponent,
-    MessagerieComponent
+    MessagerieComponent,
+    DashboardCoiffeuseComponent,
+    DashboardClienteComponent,
+    DeletePictureComponent,
+    DeconnectionComponent,
+    GetPrestationComponent,
+    AddPrestationComponent,
+    GetVilleComponent,
+    GetPlanningComponent
   ],
   imports: [
     BrowserModule,

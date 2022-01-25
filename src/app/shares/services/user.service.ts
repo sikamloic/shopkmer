@@ -14,7 +14,16 @@ export class UserService {
     private httpClient : HttpClient
   ) { }
 
-  userRegister(role: string, nom: string, prenom: string, numero: number, ville: string, email: string, pwd: string){
+  userRegister(
+      role: string, 
+      nom: string, 
+      prenom: string, 
+      numero: number, 
+      ville: string, 
+      email: string, 
+      pwd: string
+  )
+  {
     const API_URL = this.SERVER_URL + '/api/signUp';
     return this.httpClient.post(
       API_URL,
@@ -22,7 +31,7 @@ export class UserService {
         role: role,
         nom: nom,
         prenom: prenom,
-        tel: numero,
+        numero: numero,
         ville: ville,
         email: email,
         pwd: pwd,
@@ -30,7 +39,7 @@ export class UserService {
     )
   }
 
-  userLogin(email: string, pwd: string): any {
+  userLogin(email: string, pwd: string) {
     const API_URL = this.SERVER_URL + '/api/signIn';
     return this.httpClient.post(API_URL, {
         email: email,

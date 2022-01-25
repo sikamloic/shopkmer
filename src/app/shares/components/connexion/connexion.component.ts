@@ -11,6 +11,7 @@ import { UserService } from '../../services/user.service';
 })
 export class ConnexionComponent implements OnInit {
 
+  message : string | undefined
   showPassword : boolean = false;
   loginGroup : FormGroup
   constructor
@@ -33,9 +34,23 @@ export class ConnexionComponent implements OnInit {
   signIn(){
     this.userService.userLogin(this.loginGroup.value.email, this.loginGroup.value.pwd).subscribe((res:any)=>{
       console.log(res)
-      this.localStorage.set('x-access-token', res.accessToken)
-      this.route.navigate(["/cliente-acceuil"])
-    })
+      this.localStorage.set('x-access-token', res.accessToken);
+      if(res.role == "coiffeuse"){
+        this.route.navigate(["/coiffeuse/dashboard"])
+        this.localStorage.set('prenom', res.prenom)
+        this.localStorage.set("role", res.role)
+      }
+      if(res.role == "cliente"){
+        this.route.navigate(["/"])
+        this.localStorage.set('prenom', res.prenom)
+        this.localStorage.set("role", res.role)
+      }
+    },
+    (err: any) => {
+      console.log(err);
+      this.message = err.error.message;
+    }
+    )
   }
 
 }
