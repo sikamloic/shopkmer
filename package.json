@@ -7,14 +7,14 @@
     "build": "ng build",
     "lint": "ng lint",
     "test": "ng test",
-    "heroku-postbuild": "ng build --prod"
+    "heroku-postbuild": "ng build --aot --target=production"
   },
   "private": true,
   "dependencies": {
     "@angular-devkit/build-angular": "~12.2.6",
     "@angular/animations": "~12.2.0",
     "@angular/cdk": "^12.2.13",
-    "@angular/cli": "~12.2.6",
+    "@angular/cli": "^13.2.1",
     "@angular/common": "~12.2.0",
     "@angular/compiler": "~12.2.0",
     "@angular/compiler-cli": "~12.2.0",
@@ -28,7 +28,6 @@
     "jquery": "^3.6.0",
     "ngx-owl-carousel-o": "^7.0.1",
     "ngx-slick-carousel": "^0.5.1",
-    "node": "^17.4.0",
     "path": "^0.12.7",
     "rxjs": "~6.6.0",
     "slick-carousel": "^1.8.1",
@@ -37,6 +36,7 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
+    "@angular/compiler": "~12.2.0",
     "@types/jasmine": "~3.8.0",
     "@types/node": "^12.11.1",
     "jasmine-core": "~3.8.0",
