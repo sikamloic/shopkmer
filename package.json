@@ -26,8 +26,6 @@
     "@angular/router": "~12.2.0",
     "express": "^4.17.2",
     "jquery": "^3.6.0",
-    "ngx-owl-carousel-o": "^7.0.1",
-    "ngx-slick-carousel": "^0.5.1",
     "path": "^0.12.7",
     "rxjs": "~6.6.0",
     "slick-carousel": "^1.8.1",
