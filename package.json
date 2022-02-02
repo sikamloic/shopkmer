@@ -7,7 +7,7 @@
     "build": "ng build",
     "lint": "ng lint",
     "test": "ng test",
-    "heroku-postbuild": "ng build --aot --prod"
+    "heroku-postbuild": "ng build --aot --configuration production"
   },
   "private": true,
   "dependencies": {
