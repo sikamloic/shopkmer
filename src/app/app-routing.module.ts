@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccueilComponent } from './pages/cliente/accueil/accueil.component';
+import { MessagerieeComponent } from './pages/cliente/dashboard/messagerie/messagerie.component';
+import { ResultatComponent } from './pages/cliente/resultat/resultat.component';
+import { VoirProfilComponent } from './pages/cliente/voir-profil/voir-profil.component';
 import { AcceuilComponent } from './pages/coiffeuse/acceuil/acceuil.component';
 import { DeconnectionComponent } from './pages/coiffeuse/dashboard/deconnection/deconnection.component';
 import { GalerieComponent } from './pages/coiffeuse/dashboard/galerie/galerie.component';
@@ -22,7 +25,10 @@ const routes: Routes = [
   {path: 'prestations', component: PrestationComponent},
   {path: 'galerie', component: GalerieComponent},
   {path: 'discussions', component: MessagerieComponent},
-  {path: 'déconnection', component: DeconnectionComponent}
+  {path: 'déconnection', component: DeconnectionComponent},
+  {path: 'resultats', component: ResultatComponent},
+  {path: 'details', component: VoirProfilComponent},
+  {path: 'messagerie', component: MessagerieeComponent},
 ];
 
 @NgModule({

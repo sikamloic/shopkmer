@@ -25,36 +25,49 @@ export class GetVilleComponent implements OnInit {
     {
       nom: 'Lille', 
       check: false,
+      sub:[]
     },
     {
       nom: 'Nantes', 
       check: false,
+      sub:[]
     },
     {
       nom: 'Bordeaux', 
       check: false,
+      sub:[]
     },
     {
       nom: 'Rennes', 
       check: false,
+      sub:[]
     },
   ]
   constructor(
     private modalCtrl : MatDialogRef<GetVilleComponent>, @Inject(MAT_DIALOG_DATA) public id: string,
   ) { }
 
-  showSubMenu(item:any){
-    item.check = !item.check
-    if(item.check == true){
-      this.subMenu = item.sub
-    }
+  showSubMenu(items : any, index:number){
+    items.forEach((item : any, i : number) => {
+      item.check = false
+      if(i == index){
+        console.log(item)
+        item.check = !item.check
+        if(item.sub.length == 0){
+          return this.value = item.nom
+        }
+      }
+    });
   }
 
-  getValue(item:any){
-    item.check = !item.check
-    if(item.check == true){
-      return this.value = item.nom
-    }
+  getValue(items : any, index:number){
+    items.forEach((item : any, i : number) => {
+      item.check = false
+      if(i == index){
+        item.check = !item.check
+        return this.value = item.nom
+      }
+    });
   }
 
   close(){

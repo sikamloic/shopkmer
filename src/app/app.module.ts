@@ -27,6 +27,11 @@ import { GetPrestationComponent } from './shares/modals/get-prestation/get-prest
 import { AddPrestationComponent } from './shares/modals/add-prestation/add-prestation.component';
 import { GetVilleComponent } from './shares/modals/get-ville/get-ville.component';
 import { GetPlanningComponent } from './shares/modals/get-planning/get-planning.component';
+import { CalendarComponent } from './shares/components/calendar/calendar.component';
+import { ResultatComponent } from './pages/cliente/resultat/resultat.component';
+import { VoirProfilComponent } from './pages/cliente/voir-profil/voir-profil.component';
+import { MessagerieeComponent } from './pages/cliente/dashboard/messagerie/messagerie.component';
+import { ParametresComponent } from './pages/cliente/dashboard/parametres/parametres.component';
 
 
 @NgModule({
@@ -49,7 +54,12 @@ import { GetPlanningComponent } from './shares/modals/get-planning/get-planning.
     GetPrestationComponent,
     AddPrestationComponent,
     GetVilleComponent,
-    GetPlanningComponent
+    GetPlanningComponent,
+    CalendarComponent,
+    ResultatComponent,
+    VoirProfilComponent,
+    MessagerieeComponent,
+    ParametresComponent
   ],
   imports: [
     BrowserModule,

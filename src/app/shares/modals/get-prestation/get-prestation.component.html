@@ -6,8 +6,8 @@
             <mat-icon class="mat-18" (click)="close()">close</mat-icon>
         </div>
     </div>
-    <div class="" *ngFor="let item of items">
-        <div class="border-2 rounded-md cursor-pointer flex justify-between items-center h-12 p-2 w-80" (click)="showSubMenu(item)">
+    <div class="" *ngFor="let item of items; let i = index">
+        <div class="border-2 rounded-md cursor-pointer flex justify-between items-center h-12 p-2 w-80" [ngClass]="item.check ? 'border-pink-500 bg-pink-500 bg-opacity-10':''" (click)="showSubMenu(items, i)">
             <div class="flex space-x-3 items-center">
                 <div class=""><img src="assets/outils.svg" alt="" class=""></div>
                 <div class="uppercase">{{item.nom}}</div>
@@ -15,7 +15,7 @@
             <div class=""><img [src]="item.check ? 'assets/checked.svg':'assets/check.svg'" alt="" class=""></div>
         </div>
         <div class="" *ngIf="item.check">
-            <div class="rounded-md cursor-pointer flex justify-between items-center h-10 px-2 w-80 bg-gray-600 bg-opacity-40 space-y-2 mt-2" *ngFor="let sub of item.sub" (click)="getValue(sub)">
+            <div class="rounded-md cursor-pointer flex justify-between items-center h-10 px-2 w-80 bg-gray-600 bg-opacity-40 space-y-2 mt-2" *ngFor="let sub of item.sub; let i = index" (click)="getValue(item.sub, i)">
                 <div class="">{{sub.nom}}</div>
                 <div class="flex space-x-2 pb-2">
                     <img src="assets/lineVertical.svg" alt="" class="h-10">

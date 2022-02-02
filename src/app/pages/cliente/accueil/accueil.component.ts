@@ -5,6 +5,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import { MatDialog } from '@angular/material/dialog';
 import { GetPrestationComponent } from 'src/app/shares/modals/get-prestation/get-prestation.component';
 import { GetVilleComponent } from 'src/app/shares/modals/get-ville/get-ville.component';
+import { GetPlanningComponent } from 'src/app/shares/modals/get-planning/get-planning.component';
 
 @Component({
   selector: 'app-accueil',
@@ -15,6 +16,8 @@ export class AccueilComponent implements OnInit {
 
   prestation: string ='';
   ville: string =''
+  planning: string =''
+  day: number | undefined
   constructor(
     private modalCtrl : MatDialog
   ) {}
@@ -30,6 +33,13 @@ export class AccueilComponent implements OnInit {
     const modal = this.modalCtrl.open(GetVilleComponent)
     modal.afterClosed().subscribe((res)=>{
       this.ville = res
+    })
+  }
+
+  openPlanning(){
+    const modal = this.modalCtrl.open(GetPlanningComponent)
+    modal.afterClosed().subscribe((res:any)=>{
+      console.log(res)
     })
   }
 

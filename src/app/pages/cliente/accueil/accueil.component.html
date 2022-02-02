@@ -29,10 +29,10 @@
                                     <input matInput type="text" disabled="disabled" value={{prestation}} placeholder="Placeholder">
                                     <mat-icon class="text-pink-500" matSuffix>keyboard_arrow_down</mat-icon>
                                 </mat-form-field>
-                                <mat-form-field appearance="outline" class="w-full px-3 cursor-pointer shadow-none" color="primary">
+                                <mat-form-field appearance="outline" class="w-full px-3 cursor-pointer shadow-none" color="primary" (click)="openPlanning()">
                                     <mat-icon matPrefix class="mat-18 mr-2"><img src="assets/calendar.svg" alt="" class=""></mat-icon>
                                     <mat-label>Choix de votre date</mat-label>
-                                    <input matInput type="text" disabled="disabled" placeholder="Placeholder" value="" class="shadow-none">
+                                    <input matInput type="text" disabled="disabled" value={{planning}} placeholder="Placeholder" value="" class="shadow-none">
                                     <mat-icon class="text-pink-500" matSuffix>keyboard_arrow_down</mat-icon>
                                 </mat-form-field>
                             </div>
@@ -47,7 +47,7 @@
                     </mat-tab-group>
                 </div>
                 <div class="flex justify-center my-5">
-                    <button type="submit" class="uppercase bg-white text-pink-500 w-72 rounded-lg h-10">recherche</button>
+                    <button type="submit" class="uppercase bg-white text-pink-500 w-72 rounded-lg h-10" routerLink="/resultats">recherche</button>
                 </div>
             </form>
         </div>

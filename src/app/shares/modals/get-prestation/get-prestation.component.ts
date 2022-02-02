@@ -31,18 +31,27 @@ export class GetPrestationComponent implements OnInit {
     private modalCtrl : MatDialogRef<GetPrestationComponent>, @Inject(MAT_DIALOG_DATA) public id: string,
   ) { }
 
-  showSubMenu(item:any){
-    item.check = !item.check
-    if(item.check == true){
-      this.subMenu = item.sub
-    }
+
+  showSubMenu(items : any, index:number){
+    items.forEach((item : any, i : number) => {
+      item.check = false
+      if(i == index){
+        item.check = true
+        if(item.sub.length == 0){
+          return this.value = item.nom
+        }
+      }
+    });
   }
 
-  getValue(item:any){
-    item.check = !item.check
-    if(item.check == true){
-      return this.value = item.nom
-    }
+  getValue(items : any, index:number){
+    items.forEach((item : any, i : number) => {
+      item.check = false
+      if(i == index){
+        item.check = true
+        return this.value = item.nom
+      }
+    });
   }
 
   close(){
