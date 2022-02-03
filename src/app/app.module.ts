@@ -49,7 +49,7 @@ import { GetPlanningComponent } from './shares/modals/get-planning/get-planning.
     GetPrestationComponent,
     AddPrestationComponent,
     GetVilleComponent,
-    GetPlanningComponent
+    GetPlanningComponent,
   ],
   imports: [
     BrowserModule,
