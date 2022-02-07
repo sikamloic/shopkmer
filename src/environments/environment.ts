@@ -14,7 +14,7 @@ export const environment = {
       messagingSenderId: '418421848655',
       measurementId: 'G-63P59NL83N',
   },
-  SERVER_URL: 'http://localhost:3000',
+  SERVER_URL: 'https://begoodee.herokuapp.com',
   production: false
 };
 
